@@ -20,6 +20,8 @@ sl.sc.application = new function () {
         this.localStoreStories = "Stories";
         this.userStoryIntro = "As a user, I can view content based on my nearest location, so that I can browse deals closest to me.";
         this.header_AcceptanceCriteria = "-----Acceptance Criteria-----";
+        this.header_GremlinCriteria = "-----Gremlin Criteria-----";
+        this.header_NotesCriteria = "-----Notes Criteria-----";
         this.header_ProjectLimits = "-----Project Limits-----";
     }
 

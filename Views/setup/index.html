@@ -208,6 +208,7 @@
 
 
 		$("#ContinueLink").click(function(e){
+			e.preventDefault();
 			notesString = $("#Notes").val();
 			gremlinValueString += $('#IE8Check').prop('checked') ? "Internet Explorer 8 support required.\n" : "";
 			gremlinValueString += $('#IE9Check').prop('checked') ? "Internet Explorer 9 support required.\n" : "";
@@ -221,6 +222,7 @@
 			//alert(notesString);
 			sl.sc.application.setLocalStorageItem(sl.sc.application.LocalStoreGremlins,gremlinValueString);
 			sl.sc.application.setLocalStorageItem(sl.sc.application.LocalStoreNotes,notesString);
+			window.location = $(this).attr("href");
 		});
 	
 })();
