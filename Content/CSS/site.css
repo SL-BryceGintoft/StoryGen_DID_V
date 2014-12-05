@@ -2,12 +2,36 @@ body{
 	margin: 0;
 	padding:0;	
 	font-family: Arial;
-	color: #666666;
+	color: #888888;
+}
+
+#SiteHeader{
+	margin: 0 auto;
+	width: 850px;
+	padding: 0;
+}
+#SiteHeader img{
+	width: 70px;
+	display: block;
+	float: left
+}
+#SiteHeader h1{
+	font-weight: normal;
+	margin: 26px 0 0 20px;
+	padding: 0;
+	display: block;
+	float: left;
+	font-size: 16px;
+	font-style: italic;
+}
+
+.clearArino{
+	clear: both;
 }
 
 #Container{
-	border: 1px solid #999999;
-	background-color: #efefef;
+	border: 1px solid #E3E3E3;
+	background-color: #f2f2f2;
 	margin: 20px auto 0;
 	width: 800px;
 	min-height: 500px;
@@ -20,7 +44,8 @@ body{
 }
 
 .sectionHeader{
-	font-size: 16px;
+	font-size: 20px;
+	font-weight: normal;
 }
 
 select{
@@ -36,7 +61,7 @@ select{
 
 .siteGoblin{
 	font-size: 14px;
-	margin: 50px 0 0;
+	margin: 50px 0 8px;
 }
 
 button{}
@@ -53,7 +78,131 @@ button .primary{}
     text-decoration: none;
 }
 
-form input .checkbox{}
+form input .checkbox{
+	-webkit-appearance: none;
+	width: 20px;
+	height: 20px;
+}
+
+
+
+
+
+
+
+input[type=checkbox] {
+	visibility: hidden;
+}
+
+
+
+
+
+
+
+/* SQUARED THREE */
+.squaredThree, 
+.squaredThree2, 
+.squaredThree3, 
+.squaredThree4, 
+.squaredThree5, 
+.squaredThree6, 
+.squaredThree7 {
+	width: 20px;
+	position: relative;
+}
+
+.squaredThree label, 
+.squaredThree2 label, 
+.squaredThree3 label, 
+.squaredThree4 label, 
+.squaredThree5 label , 
+.squaredThree6 label , 
+.squaredThree7 label  {
+	cursor: pointer;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 0;
+	left: 0;
+	border-radius: 4px;
+
+	-webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);
+	-moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);
+	box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);
+
+	background: -webkit-linear-gradient(top, #222 0%, #45484d 100%);
+	background: -moz-linear-gradient(top, #222 0%, #45484d 100%);
+	background: -o-linear-gradient(top, #222 0%, #45484d 100%);
+	background: -ms-linear-gradient(top, #222 0%, #45484d 100%);
+	background: linear-gradient(top, #222 0%, #45484d 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222', endColorstr='#45484d',GradientType=0 );
+}
+
+.squaredThree label:after, 
+.squaredThree2 label:after, 
+.squaredThree3 label:after, 
+.squaredThree4 label:after, 
+.squaredThree5 label:after, 
+.squaredThree6 label:after, 
+.squaredThree7 label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 9px;
+	height: 5px;
+	background: transparent;
+	top: 4px;
+	left: 4px;
+	border: 3px solid #fcfff4;
+	border-top: none;
+	border-right: none;
+
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.squaredThree label:hover::after, 
+.squaredThree2 label:hover::after, 
+.squaredThree3 label:hover::after, 
+.squaredThree4 label:hover::after, 
+.squaredThree5 label:hover::after, 
+.squaredThree6 label:hover::after, 
+.squaredThree7 label:hover::after{
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	filter: alpha(opacity=30);
+	opacity: 0.3;
+}
+
+.squaredThree input[type=checkbox]:checked + label:after, 
+.squaredThree2 input[type=checkbox]:checked + label:after, 
+.squaredThree3 input[type=checkbox]:checked + label:after, 
+.squaredThree4 input[type=checkbox]:checked + label:after, 
+.squaredThree5 input[type=checkbox]:checked + label:after, 
+.squaredThree6 input[type=checkbox]:checked + label:after, 
+.squaredThree7 input[type=checkbox]:checked + label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 form input .radio{}
 
@@ -77,6 +226,8 @@ li{
 	float:left;
 	display: block;
 	margin: 10px 10px 0 0;
+	font-size: 12px;
+	color: #000;
 }
 
 .langHolder{
@@ -96,9 +247,25 @@ li{
 	font-size: 12px;
 	color: #333333;
 }
-.browserHolder li{
+.browserHolder li, .langHolder li{
 	display: block;
+	position: relative;
+	margin: 10px 0;
+	padding: 0;
+}
+.browserHolder li{
 	width: 250px;
+}
+.langHolder li{
+	width: 150px;
+}
+
+.browserHolder li span,
+.langHolder li span{
+	position: absolute;
+	top: 2px;
+	left: 26px;
+
 }
 
 .pageControls{
