@@ -34,7 +34,7 @@ body{
 	background-color: #f2f2f2;
 	margin: 20px auto 0;
 	width: 800px;
-	min-height: 500px;
+	min-height: 190px;
 	padding: 20px 20px 0;
 }
 #InnerContainer{
@@ -305,6 +305,6 @@ li{
 	float: right;
 
 }
-#GoblinChooserX{
+#GoblinChooserx{
 	display: none;
 }
