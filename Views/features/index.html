@@ -46,7 +46,7 @@
 		<h3>Store Location Detection</h3>
 		</div>
 
-		<p>As a user, I can blah blah blah...</p>
+		<p id="StoryDetailsIntro"></p>
 
 		<form>
 
@@ -65,10 +65,24 @@
 	</div>
 
 	<div class="pageControls">
-				<a href="#" class="stdLink">Back to Setup</a>
-				<button>Continue</button>
+				<a href="javascript:void(0)"class="stdLink">Back to Setup</a>
+				<a href="javascript:void(0)" id="Generate" class="stdLink">Continue</a>
 	</div>
 
+</div>
+
+<div id="StoryViewModal" style="width:100%;height:100%;position:fixed;top:0;left:0;display:none;">
+	<div id="ViewModalBackground" style="width:100%;height:100%;position:fixed;top:0;left:0;background-color:Black;opacity:.5;"></div> 
+	<div id="ModalView" style="position:fixed;top:0;bottom:0;left:0;right:0;margin:auto;width:400px;height:600px;background-color:White;">
+		<div >Review Story For:</div>
+		<div >$$$ Story Name</div>
+		<div >Make any final edits below and press "Copy to Clipboard" to complete this story</div>
+		<textarea id="ReviewText">
+			<!-- I can see the available details about an item so that I may learn more information about the item.", "acceptanceCriteria":"Verify the style, copy and layout conforms to the SmartCircular 5 design template.&#13;&#10;Show me a user can access an item detail page from browse -->
+		</textarea>
+		<a href="javascript:void(0)" class="modalCloseBtn">Cancel</a>
+		<a href="javascript:void(0)" class="modalCloseBtn">Copy to Clipboard</a>
+	</div>
 </div>
 
 <script src="../../../Content/Scripts/jquery/jquery.json2.js"></script>
@@ -79,6 +93,7 @@
 (function(){
 	var storiesData=[];
 	var listMarkup = "";
+	var currentStory = {};
 
 	//TODO: replace "/n" with whatever will brreak the text
 
@@ -93,13 +108,39 @@
 
 		}
 
-	}
+	};
 	var initListeners=function(){
 		$(".storyLink").click(function(e){
 			//alert("show story:" + $(this).attr("data-storyid"));
-			$("#acceptanceText").val(findItemByKey("key", $(this).attr("data-storyid"), storiesData).acceptanceCriteria);
-			$("#limitsText").val(findItemByKey("key", $(this).attr("data-storyid"), storiesData).limits);
+			currentStory = findItemByKey("key", $(this).attr("data-storyid"), storiesData);
+			$("#acceptanceText").val(currentStory.acceptanceCriteria);
+			$("#limitsText").val(currentStory.limits);
+			$("#StoryDetailsIntro").html(currentStory.storyDetails);
 		});
+		$("#Generate").click(function(e){
+			$("#StoryViewModal").show();
+			//
+			var storyText = "";
+			storyText += currentStory.storyDetails;
+			storyText += "\n\n";
+			//
+			storyText += sl.sc.application.header_AcceptanceCriteria;
+			storyText += "\n\n";
+			storyText += currentStory.acceptanceCriteria;
+			storyText += "\n\n";
+			//
+			storyText += sl.sc.application.header_ProjectLimits;
+			storyText += "\n\n";
+			storyText += currentStory.limits;
+			storyText += "\n\n";
+			//
+			$("#ReviewText").val(storyText);
+		});
+
+		$("#StoryViewModal .modalCloseBtn").click(function(e){
+			$("#StoryViewModal").hide();
+		});
+		
 	}
 
 	var manageStories = function(data){

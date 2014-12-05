@@ -16,6 +16,9 @@ sl.sc.application = new function () {
         this.storiesFile = "../../../Content/Data/stories.json";
         this.localStoreFeatures = "Features";
         this.localStoreStories = "Stories";
+        this.userStoryIntro = "As a user, I can view content based on my nearest location, so that I can browse deals closest to me.";
+        this.header_AcceptanceCriteria = "-----Acceptance Criteria-----";
+        this.header_ProjectLimits = "-----Project Limits-----";
     }
 
     //# Public Methods
