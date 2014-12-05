@@ -40,17 +40,18 @@ sl.sc.application = new function () {
             })
             .done(function( data ) {
                 cb(data);
-            }).error(function(jqXhr, textStatus, error) {
+            })
+            .error(function(jqXhr, textStatus, error) {
                 alert("ERROR: " + textStatus + ", " + error);
             });
         };
         
         this.renderFeatures = function (data) {
-            console.log(data);
+            //console.log(data);
             //console.log(sl.sc.application.localStoreFeatures);
-            sl.sc.application.setLocalStorageItem(sl.sc.application.localStoreFeatures,data);
-            var test = sl.sc.application.getLocalStorageItem(sl.sc.application.localStoreFeatures);
-            console.log(test);
+            //sl.sc.application.setLocalStorageItem(sl.sc.application.localStoreFeatures,data);
+            //var test = sl.sc.application.getLocalStorageItem(sl.sc.application.localStoreFeatures);
+            //console.log(test);
         };
         this.renderStories = function (data) {
             console.log(data);
@@ -58,13 +59,13 @@ sl.sc.application = new function () {
         };
 
         this.init = function () {
-            sl.sc.application.getJsonData(sl.sc.application.featuresFile, sl.sc.application.renderFeatures);
+            //sl.sc.application.getJsonData(sl.sc.application.featuresFile, sl.sc.application.renderFeatures);
             //sl.sc.application.getJsonData(sl.sc.application.storiesFile, sl.sc.application.renderStories);
         };
 
         this.ready = function () {
-            alert("hi");
-            sl.sc.application.init();
+            //alert("hi");
+            //sl.sc.application.init();
 
         };
     }
