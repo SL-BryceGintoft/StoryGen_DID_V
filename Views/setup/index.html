@@ -21,7 +21,13 @@
 
 	<script>
 		$( document ).ready(function() {
-			console.log( "ready!" );
+
+			$('#PlatformSelector').val("Select a Platform");
+
+			$( "#PlatformSelector" ).change(function() {
+				$('#GoblinChooser').css('display','block');
+			});
+
 		});
 	</script>
 
@@ -49,7 +55,7 @@
 
 			<select>
 
-				<option selected>Choose a Client</option>
+				<option selected value="Choose a Client">Choose a Client</option>
 				<option>ALDI</option>
 				<option>Ace Hardware</option>
 				<option>Canadian Tire</option>
@@ -67,7 +73,7 @@
 
 		<div id="PlatformSelector">
 			<select>
-				<option selected>Select a Platform</option>
+				<option selected value="Select a Platform">Select a Platform</option>
 				<option>Smart Deals</option>
 				<option>SC Standard</option>
 				<option>SC 5</option>
