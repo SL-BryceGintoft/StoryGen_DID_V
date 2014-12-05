@@ -206,7 +206,11 @@ input[type=checkbox] {
 
 form input .radio{}
 
-.formHint{}
+.formHint{
+
+	font-size: 12px;
+	font-style: italic;
+}
 
 ul{
 	margin: 0;
@@ -238,15 +242,28 @@ li{
 	width: 100px;
 }
 
-.goblinHolder textarea{
+#StoriesList li{
+	margin: 0 0 10px 0;
+	font-size: 14px;
+}
+
+.goblinHolder textarea, .rightCol textarea{
 	margin: 10px 0 0 0;
-	width: 574px;
+	width: 100%;
 	height: 80px;
 	padding: 10px;
 	font-family: Arial;
 	font-size: 12px;
 	color: #333333;
 }
+.rightCol textarea{
+	margin: 0 0 30px 0;
+}
+
+#acceptanceText{
+height: 260px;
+}
+
 .browserHolder li, .langHolder li{
 	display: block;
 	position: relative;
@@ -284,7 +301,7 @@ li{
 }
 
 .pageControls a, .pageControls button{
-	margin: 0 10px;
+	margin: 0 30px;
 } 
 
 .storyHeader{
@@ -296,15 +313,89 @@ li{
 	color: #000;
 	font-size: 18px;
 	font-weight: bold;
+	margin: 0;
+	padding: 0;
 }
 .leftCol{
 	float: left;
+	width: 250px;
+	margin-left:80px;
+	border-right: 1px solid #999; 
+	margin-bottom: 40px;
 
 }
 .rightCol{
 	float: right;
+	width: 340px;
+	margin-right:80px;
 
 }
 #GoblinChooser{
 	display: none;
+}
+
+
+#StoriesList{}
+
+#StoriesList li{
+
+
+
+}
+
+.storyPage{
+	margin-left: 80px;
+}
+
+.storySelected{
+	color: #000;
+	text-decoration: none;
+	position: relative;
+	font-weight: bold;
+}
+
+.storySelected:after{
+	color: #000;
+	position: absolute;
+	content: "";
+	width: 0; 
+	height: 0; 
+	border-top: 4px solid transparent;
+	border-bottom: 4px solid transparent;
+	border-left: 4px solid #000;
+	top: 3px;
+	right: -70px;
+
+}
+
+#StoryDetailsIntro{
+	font-size: 14px;
+
+}
+
+.buttonLink{
+ 	display: inline-block;
+ 	border: 1px solid #ccc;
+ 	text-decoration: none;
+ 	padding: 10px;
+ 	color: #000;
+ 	background: #f2f2f2; /* Old browsers */
+background: -moz-linear-gradient(top,  #f2f2f2 0%, #b7b7b7 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f2f2), color-stop(100%,#b7b7b7)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #f2f2f2 0%,#b7b7b7 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #f2f2f2 0%,#b7b7b7 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #f2f2f2 0%,#b7b7b7 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #f2f2f2 0%,#b7b7b7 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#b7b7b7',GradientType=0 ); /* IE6-9 */
+
+}
+
+#ModalView{
+	padding: 30px;
+	width: 440px;
+}
+#ReviewText{
+	width: 100%;
+	height: 300px;
+
 }
