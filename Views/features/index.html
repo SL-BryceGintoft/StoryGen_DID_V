@@ -43,7 +43,7 @@
 		
 		<div class="storyHeader">
 		Create Story For:
-		<h3>Store Location Detection</h3>
+		<h3 id="StoryTitle"></h3>
 		</div>
 
 		<p id="StoryDetailsIntro"></p>
@@ -72,16 +72,24 @@
 </div>
 
 <div id="StoryViewModal" style="width:100%;height:100%;position:fixed;top:0;left:0;display:none;">
-	<div id="ViewModalBackground" style="width:100%;height:100%;position:fixed;top:0;left:0;background-color:Black;opacity:.5;"></div> 
+	<div class="viewModalBackground" style="width:100%;height:100%;position:fixed;top:0;left:0;background-color:Black;opacity:.5;"></div> 
 	<div id="ModalView" style="position:fixed;top:0;bottom:0;left:0;right:0;margin:auto;width:400px;height:600px;background-color:White;">
 		<div >Review Story For:</div>
-		<div >$$$ Story Name</div>
+		<div id="ModalStoryTitle"></div>
 		<div >Make any final edits below and press "Copy to Clipboard" to complete this story</div>
 		<textarea id="ReviewText">
 			<!-- I can see the available details about an item so that I may learn more information about the item.", "acceptanceCriteria":"Verify the style, copy and layout conforms to the SmartCircular 5 design template.&#13;&#10;Show me a user can access an item detail page from browse -->
 		</textarea>
-		<a href="javascript:void(0)" class="modalCloseBtn">Cancel</a>
-		<a href="javascript:void(0)" class="modalCloseBtn">Copy to Clipboard</a>
+		<a href="javascript:void(0)" id="StoryModalClose" class="modalCloseBtn">Cancel</a>
+		<a href="javascript:void(0)" id="StoryModalCopy" class="modalCopyBtn">Copy to Clipboard</a>
+	</div>
+</div>
+
+<div id="ConfirmViewModal" style="width:100%;height:100%;position:fixed;top:0;left:0;display:none;">
+	<div class="viewModalBackground" style="width:100%;height:100%;position:fixed;top:0;left:0;background-color:Black;opacity:.5;"></div> 
+	<div id="ModalView" style="position:fixed;top:0;bottom:0;left:0;right:0;margin:auto;width:400px;height:600px;background-color:White;">
+		<div >Story Copied Successfully!</div>
+		<a href="javascript:void(0)" class="modalCloseBtn">Confirm</a>
 	</div>
 </div>
 
@@ -111,14 +119,18 @@
 	};
 	var initListeners=function(){
 		$(".storyLink").click(function(e){
-			//alert("show story:" + $(this).attr("data-storyid"));
+
 			currentStory = findItemByKey("key", $(this).attr("data-storyid"), storiesData);
+
+			$("#StoryTitle").html(currentStory.storyName);
 			$("#acceptanceText").val(currentStory.acceptanceCriteria);
 			$("#limitsText").val(currentStory.limits);
 			$("#StoryDetailsIntro").html(currentStory.storyDetails);
 		});
 		$("#Generate").click(function(e){
 			$("#StoryViewModal").show();
+			//
+			$("#ModalStoryTitle").html(currentStory.storyName);
 			//
 			var storyText = "";
 			storyText += currentStory.storyDetails;
@@ -137,7 +149,7 @@
 			$("#ReviewText").val(storyText);
 		});
 
-		$("#StoryViewModal .modalCloseBtn").click(function(e){
+		$("#StoryViewModal #StoryModalClose").click(function(e){
 			$("#StoryViewModal").hide();
 		});
 		
