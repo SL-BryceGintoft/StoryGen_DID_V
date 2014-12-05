@@ -1,0 +1,22 @@
+{
+    "stories": [
+        {
+            "storyName": "Store Location Detection",
+            "storyDetails": "As a user, I can view content based on my nearest location, so that I can browse deals closest to me.",
+            "acceptanceCriteria": "Verify that the user’s location is automatically determined by IP lookup or HTML 5 Geo API and the closest store for my location is selected.\\nDemonstrate the user will return to the same store upon return visits.\\nDemonstrate that if the user manually selects a store, they’re brought back to that store when returning to the site.\\nValidate the store's location is displayed according to the design template for a SmartCircular 5 site.\\n\\tShow me a link to change location",
+            "Limits": "Users can only be brought back to their manually-selected store location if cookies are enabled in their web browser."
+        },
+        {
+            "storyName": "New User Entry Page",
+            "storyDetails": "As a user, if my location cannot be determined by IP lookup services, I can input a zip code or city/state combination so I can browse deals based on my location of choice.",
+            "acceptanceCriteria": "Demonstrate if my location cannot be determined by IP lookup or HTML5 Geo API, I am prompted to enter my zip code or city, state combination.\\nDemonstrate that if an invalid zip code or city, state combination is entered a user friendly error message is displayed.\\nValidate set focus, where the cursor is already flashing within the text box.\\nVerify upon submission, the user is brought to the closest store location based on submitted information.",
+            "Limits": ""
+        },
+        {
+            "storyName": "Change Store Location",
+            "storyDetails": "As a user, I can change my store location so I can view deals based on a location of my choice.",
+            "acceptanceCriteria": "Verify the current store location is clearly displayed as per the design template for SmartCircular 5 site.\\nDemonstrate a user can click on change location as per the design template for SmartCircular 5 site.\\nDemonstrate a user can change location by entering a new zip code or city, state combination.\\nVerify that state abbreviations are recognized (ex: IL for Illinois)\\nShow me a successful entry of a zip code or city, state combination returns a list of the 10 closest stores within 100 miles of the location entered.\\nVerify the following display for each store:\\n\\tStreet address\\n\\tStreet address\\n\\tCity, state and zip code\\n\\tPhone number (if applicable)\\n\\tStore hours\\n\\tLink to Make my Store\\n\\t\\tDemonstrate that clicking on the Make my Store button will return the user to the first page of the ads available for that specific location\\n\\tLink to View in Map\\n\\t\\tDemonstrate that clicking on the View in Map button will show the user the google maps available for the selected location.\\nVerify the following display for the user’s currently selected store:\\n\\tCity, state and zip code\\n\\tMap view\\nDemonstrate that if an invalid zip code or city, state combination is entered a user friendly error message is displayed.\\nDemonstrate that if an invalid zip code or city, state combination is entered a user friendly error message is displayed.\\nShow me a way to leave the change store screen.",
+            "Limits": ""
+        }
+    ]
+}
