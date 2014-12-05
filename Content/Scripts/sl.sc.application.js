@@ -10,8 +10,10 @@ sl.sc.application = new function () {
 
     //# Public Vars
     {
-        this.featuresFile = "http://localhost/Content/Data/features.json";
-        this.storiesFile = "http://localhost/Content/Data/stories.json";
+        //this.featuresFile = "http://localhost/Content/Data/features.json";
+        //this.storiesFile = "http://localhost/Content/Data/stories.json";
+        this.featuresFile = "../../../Content/Data/features.json";
+        this.storiesFile = "../../../Content/Data/stories.json";
         this.localStoreFeatures = "Features";
         this.localStoreStories = "Stories";
     }
@@ -32,7 +34,7 @@ sl.sc.application = new function () {
         };
 
         this.getJsonData = function (file,cb) {
-            console.log(file);
+            //console.log(file);
             $.ajax( file, {
                 format: "json"
             })
@@ -46,9 +48,9 @@ sl.sc.application = new function () {
         this.renderFeatures = function (data) {
             console.log(data);
             //console.log(sl.sc.application.localStoreFeatures);
-            //sl.sc.application.setLocalStorageItem(sl.sc.application.localStoreFeatures,data);
-            //var test = sl.sc.application.getLocalStorageItem(sl.sc.application.localStoreFeatures);
-            //console.log(test);
+            sl.sc.application.setLocalStorageItem(sl.sc.application.localStoreFeatures,data);
+            var test = sl.sc.application.getLocalStorageItem(sl.sc.application.localStoreFeatures);
+            console.log(test);
         };
         this.renderStories = function (data) {
             console.log(data);
@@ -61,6 +63,7 @@ sl.sc.application = new function () {
         };
 
         this.ready = function () {
+            alert("hi");
             sl.sc.application.init();
 
         };
