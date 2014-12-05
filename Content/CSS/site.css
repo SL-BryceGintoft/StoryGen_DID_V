@@ -11,6 +11,12 @@ body{
 	margin: 20px auto 0;
 	width: 800px;
 	min-height: 500px;
+	padding: 20px 20px 0;
+}
+#InnerContainer{
+	width: 600px;
+	margin: 0 auto;
+
 }
 
 .sectionHeader{
@@ -18,8 +24,7 @@ body{
 }
 
 select{
-
-	width: 60%;
+	width: 100%;
 	padding: 6px;
 	border-radius: 0;
 	-webkit-appearance: none;
@@ -31,6 +36,7 @@ select{
 
 .siteGoblin{
 	font-size: 14px;
+	margin: 40px 0 0;
 }
 
 button{}
@@ -53,25 +59,44 @@ form input .radio{}
 
 .formHint{}
 
+ul{
+	margin: 10px 0 0 0;
+	padding: 0;
+
+}
+
 li{
 	list-style: none;
 
 }
 
 .goblinHolder{
-	width: 600px;
-	margin: 0 auto;
 }
+
 .goblinHolder li{
 	float:left;
+	display: block;
+}
+
+.langHolder li{
+	width: 100px;
+}
+
+.goblinHolder textarea{
+	margin: 20px 0 0 0;
+	width: 100%;
+}
+.browserHolder li{
 	display: block;
 	width: 250px;
 }
 
 .pageControls{
 	clear: both;
-	margin: 0 auto;
-	width: 200px;
+	margin: 20px auto 0;
+	width: auto;
+	border-top: 1px solid #999;
+	padding: 10px 0;
 }
 
 .storyHeader{
@@ -91,4 +116,7 @@ li{
 .rightCol{
 	float: right;
 
+}
+#GoblinChooserX{
+	display: none;
 }
