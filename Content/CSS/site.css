@@ -73,3 +73,22 @@ li{
 	margin: 0 auto;
 	width: 200px;
 }
+
+.storyHeader{
+	color: #000;
+	font-size: 12px;
+}
+
+.storyHeader h3{
+	color: #000;
+	font-size: 18px;
+	font-weight: bold;
+}
+.leftCol{
+	float: left;
+
+}
+.rightCol{
+	float: right;
+
+}
