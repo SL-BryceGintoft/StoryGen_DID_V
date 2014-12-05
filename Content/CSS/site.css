@@ -1,0 +1,75 @@
+body{
+	margin: 0;
+	padding:0;	
+	font-family: Arial;
+	color: #666666;
+}
+
+#Container{
+	border: 1px solid #999999;
+	background-color: #efefef;
+	margin: 20px auto 0;
+	width: 800px;
+	min-height: 500px;
+}
+
+.sectionHeader{
+	font-size: 16px;
+}
+
+select{
+
+	width: 60%;
+	padding: 6px;
+	border-radius: 0;
+	-webkit-appearance: none;
+	border: 1px solid #999999;
+	margin: 10px auto;
+	display: block;
+
+}
+
+.siteGoblin{
+	font-size: 14px;
+}
+
+button{}
+
+button .primary{}
+
+.stdLink{
+    color: #007978;
+    text-decoration: underline;
+}
+
+.stdLink:hover{
+    color: #000;
+    text-decoration: none;
+}
+
+form input .checkbox{}
+
+form input .radio{}
+
+.formHint{}
+
+li{
+	list-style: none;
+
+}
+
+.goblinHolder{
+	width: 600px;
+	margin: 0 auto;
+}
+.goblinHolder li{
+	float:left;
+	display: block;
+	width: 250px;
+}
+
+.pageControls{
+	clear: both;
+	margin: 0 auto;
+	width: 200px;
+}
