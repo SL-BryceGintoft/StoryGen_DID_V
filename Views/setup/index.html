@@ -17,7 +17,7 @@
 	<title>Site Setup</title>
 
 	<link rel="stylesheet" type="text/css" href="../../Content/CSS/site.css">
-	<script src="../../Content/Scripts/jquery/jquery-1.7.1.min.js"></script>
+	<script src="../../../Content/Scripts/jquery/jquery-1.7.1.min.js"></script>
 
 	<script>
 		$( document ).ready(function() {
@@ -89,8 +89,8 @@
 					<li>
 
 						<div class="squaredThree">
-							<input type="checkbox" value="None" id="squaredThree" name="check" />
-							<label for="squaredThree"></label>
+							<input type="checkbox" value="Internet Explorer 8" id="IE8Check" name="check" />
+							<label for="IE8Check"></label>
 						</div><span>Internet Explorer 8</span>
 
 
@@ -100,8 +100,8 @@
 					<li>
 
 						<div class="squaredThree2">
-							<input type="checkbox" value="None" id="squaredThree2" name="check" />
-							<label for="squaredThree2"></label>
+							<input type="checkbox" value="Internet Explorer 9" id="IE9Check" name="check" />
+							<label for="IE9Check"></label>
 						</div><span>Internet Explorer 9</span>
 
 
@@ -111,8 +111,8 @@
 					<li>
 
 						<div class="squaredThree3">
-							<input type="checkbox" value="None" id="squaredThree3" name="check" />
-							<label for="squaredThree3"></label>
+							<input type="checkbox" value="Safari 6" id="Safari6Check" name="check" />
+							<label for="Safari6Check"></label>
 						</div><span>Safari 6</span>
 
 
@@ -122,8 +122,8 @@
 					<li>
 
 						<div class="squaredThree4">
-							<input type="checkbox" value="None" id="squaredThree4" name="check" />
-							<label for="squaredThree4"></label>
+							<input type="checkbox" value="Safari 7" id="Safari7Check" name="check" />
+							<label for="Safari7Check"></label>
 						</div><span>Safari 7</span>
 
 
@@ -131,7 +131,7 @@
 
 				</ul>
 
-				 <textarea>Add additional browsers and notes here.</textarea> 
+				 <textarea id="Notes">Add additional browsers and notes here.</textarea> 
 
 
 			</div>
@@ -144,24 +144,24 @@
 					<li>
 
 						<div class="squaredThree5">
-							<input type="checkbox" value="None" id="squaredThree5" name="check" />
-							<label for="squaredThree5"></label>
+							<input type="checkbox" value="Spanish" id="SpanishCheck" name="check" />
+							<label for="SpanishCheck"></label>
 						</div><span>Spanish</span>
 
 					</li>
 					<li>
 
 						<div class="squaredThree6">
-							<input type="checkbox" value="None" id="squaredThree6" name="check" />
-							<label for="squaredThree6"></label>
+							<input type="checkbox" value="French" id="FrenchCheck" name="check" />
+							<label for="FrenchCheck"></label>
 						</div><span>French</span>
 
 					</li>
 					<li>
 
 						<div class="squaredThree7">
-							<input type="checkbox" value="None" id="squaredThree7" name="check" />
-							<label for="squaredThree7"></label>
+							<input type="checkbox" value="Klingon" id="KlingonCheck" name="check" />
+							<label for="KlingonCheck"></label>
 						</div><span>Klingon</span>
 					</li>
 				</ul>
@@ -170,7 +170,7 @@
 
 			<div class="pageControls">
 				<a href="#" class="stdLink">Cancel</a>
-				<a href="../features"class="stdLink">Continue</a>
+				<a href="../features" id="ContinueLink" class="stdLink">Continue</a>
 			</div>
 
 		</div>
@@ -182,8 +182,49 @@
 </div>
 
 
+<script src="../../../Content/Scripts/jquery/jquery.json2.js"></script>
+<script src="../../../Content/Scripts/jquery/jquery.jsoncookie.js"></script>
+<script src="../../../Content/Scripts/sl.sc.application.js"></script>
+
+<script>
+(function(){
+
+// IE8Check
+// Internet Explorer 8
+// IE9Check
+// Internet Explorer 9
+// Safari6Check
+// Safari 6
+// Safari7Check
+// Safari 7
+// FrenchCheck
+// French
+// KlingonCheck
+// Klingon
 
 
+	var gremlinValueString = "";
+	var notesString="";
+
+
+		$("#ContinueLink").click(function(e){
+			notesString = $("#Notes").val();
+			gremlinValueString += $('#IE8Check').prop('checked') ? "Internet Explorer 8 support required.\n" : "";
+			gremlinValueString += $('#IE9Check').prop('checked') ? "Internet Explorer 9 support required.\n" : "";
+			gremlinValueString += $('#Safari6Check').prop('checked') ? "Safari 6 support required.\n" : "";
+			gremlinValueString += $('#Safari7Check').prop('checked') ? "Safari 7 support required.\n" : "";
+			gremlinValueString += $('#SpanishCheck').prop('checked') ? "Spanish support required.\n" : "";
+			gremlinValueString += $('#FrenchCheck').prop('checked') ? "French support required.\n" : "";
+			gremlinValueString += $('#KlingonCheck').prop('checked') ? "Klingon support required.\n" : "";
+			//alert($('#SpanishCheck').prop('checked'));
+			//console.log(gremlinValueString);
+			//alert(notesString);
+			sl.sc.application.setLocalStorageItem(sl.sc.application.LocalStoreGremlins,gremlinValueString);
+			sl.sc.application.setLocalStorageItem(sl.sc.application.LocalStoreNotes,notesString);
+		});
+	
+})();
+</script>
 
 
 </body>
